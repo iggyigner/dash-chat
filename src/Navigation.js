@@ -39,8 +39,8 @@ class Navigation extends React.Component {
            });
    }
 
-   changeRoomHandler(id){
-        this.props.onChange(id);
+   changeRoomHandler(id, name){
+        this.props.onChange(id, name);
     }
 
     // changeActiveRoom(roomId) {

@@ -17,7 +17,7 @@ class DashChatApp extends React.Component {
             activeRoomUsers: []
         }
 
-        this.updateMessagesHandler = this.updateMessagesHandler.bind(this);
+        this.updateRoomHandler = this.updateRoomHandler.bind(this);
         this.sendMessageHandler = this.sendMessageHandler.bind(this);
     }
 
@@ -45,7 +45,7 @@ class DashChatApp extends React.Component {
                         this.setState({ messages: messages });
                     })
             });
-        
+
         // this.setState({ 
         //     messages: messages, 
         //     activeRoomId: res.roomId, 
@@ -56,17 +56,26 @@ class DashChatApp extends React.Component {
     }
 
     // Fetch messages on room change and update active room
-    updateMessagesHandler(roomId) {
+    updateRoomHandler(roomId, roomName) {
         axios.get('http://localhost:8080/api/rooms/' + roomId + '/messages')
             .then(res => {
                 const messages = res.data.map(message => message);
-                this.updateRoomMessages(messages, roomId);
+                this.updateRoom(messages, roomId, roomName);
             });
         // console.log("roomID: " + roomId);
     }
 
-    updateRoomMessages(messages, roomId) {
-        this.setState({ messages: messages, activeRoomId: roomId });
+    updateRoom(messages, roomId, roomName) {
+        axios.get('http://localhost:8080/api/rooms/' + roomId)
+            .then(res => {
+                this.setState({
+                    messages: messages,
+                    activeRoomId: roomId,
+                    activeRoom: roomName,
+                    activeRoomUsers: res.data.users
+                });
+            })
+
     }
 
     // Add user submitted messages to both the server (for persistance) and update UI
@@ -96,9 +105,9 @@ class DashChatApp extends React.Component {
             <div>
                 <Navigation
                     name={this.state.username}
-                    onChange={this.updateMessagesHandler}
+                    onChange={this.updateRoomHandler}
                     activeRoomId={this.state.activeRoomId} />
-                <MessageRoomHeader 
+                <MessageRoomHeader
                     activeRoomName={this.state.activeRoom}
                     activeRoomUsers={this.state.activeRoomUsers}
                 />

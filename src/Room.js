@@ -13,8 +13,8 @@ class Room extends React.Component {
         // Prevent form submit from refreshing the page
         event.preventDefault();
 
-        console.log('event.target.ref:' + event.target.ref);
-        this.props.onClick(event.target.id);
+        console.log('event.target.value:' + event.target.innerText);
+        this.props.onClick(event.target.id, event.target.innerText);
         // this.setState({ messageInput: '' })
     }
 
