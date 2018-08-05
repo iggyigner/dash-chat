@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import Room from './Room';
-import UserSessionTime from './UserSessionTime';
+import UserSessionTimer from './UserSessionTimer';
 
 const NavContainer = styled.div`
     width: 200px;
@@ -52,7 +52,7 @@ class Navigation extends React.Component {
         return (
             <NavContainer>
                 <UserInfo>{this.props.name}
-                <UserSessionTime />
+                <UserSessionTimer />
                 </UserInfo>
                 {this.state.rooms.map((room, i) => (
                     <Room
