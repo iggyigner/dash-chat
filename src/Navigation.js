@@ -38,32 +38,14 @@ class Navigation extends React.Component {
            });
    }
 
-   componentDidUpdate(prevState) {
-       console.log("prevState.activeRoom" + prevState.activeRoom);
-       console.log("this.state.activeRoom" + this.state.activeRoom);
-
-       if( prevState.activeRoom !== this.state.activeRoom ) {
-           this.props.onChange(this.state.activeRoom);
-           console.log('exiting navigation update');
-       }
-   }ç
-
    changeRoomHandler(id){
-    axios.get('http://localhost:8080/api/rooms/' + id)
-        .then(res => {
-            const users = res.data.users;
-            const roomId = res.data.id
-            console.log('id:' + id);
-            console.log(res);
-            console.log(res.data.users);
-            this.changeActiveRoom(roomId);
-        });
+        this.props.onChange(id);
     }
 
-    changeActiveRoom(roomId) {
-        console.log("entered changeActiveRoom");
-        this.setState({ activeRoom: roomId });
-    }
+    // changeActiveRoom(roomId) {
+    //     console.log("entered changeActiveRoom");
+    //     this.setState({ activeRoom: roomId });
+    // }
 
     render() {
         return (
@@ -75,6 +57,7 @@ class Navigation extends React.Component {
                         id={room.id}
                         name={room.name}
                         onClick={this.changeRoomHandler}
+                        activeRoom={this.props.activeRoom}
                     />
                 ))}
             </NavContainer>

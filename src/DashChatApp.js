@@ -10,7 +10,8 @@ class DashChatApp extends React.Component {
 
         this.state = {
             messages: [],
-            username: this.props.username
+            username: this.props.username,
+            activeRoom: 0
         }
 
         this.updateMessagesHandler = this.updateMessagesHandler.bind(this);
@@ -29,17 +30,17 @@ class DashChatApp extends React.Component {
         axios.get('http://localhost:8080/api/rooms/' + roomId + '/messages')
             .then(res => {
                 const messages = res.data.map(message => message);
-                this.updateRoomMessages(messages);
+                this.updateRoomMessages(messages, roomId);
             });
         // console.log("roomID: " + roomId);
     }
 
-    updateRoomMessages(messages) {
-        this.setState({messages});
+    updateRoomMessages(messages, roomId) {
+        this.setState({ messages: messages, activeRoom: roomId });
     }
 
     sendMessageHandler(message) {
-        axios.post('http://localhost:8080/api/rooms/0/messages', {
+        axios.post('http://localhost:8080/api/rooms/' + this.state.activeRoom + '/messages', {
             name: this.props.username,
             message: message
         });
@@ -62,7 +63,10 @@ class DashChatApp extends React.Component {
     render() {
         return (
             <div>
-                <Navigation name={this.state.username} onChange={this.updateMessagesHandler} />
+                <Navigation 
+                    name={this.state.username} 
+                    onChange={this.updateMessagesHandler} 
+                    activeRoom={this.state.activeRoom} />
                 <MessageList messages={this.state.messages} />
                 <MessageInput onSend={this.sendMessageHandler} />
             </div>
