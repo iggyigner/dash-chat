@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import Room from './Room';
+import UserSessionTime from './UserSessionTime';
 
 const NavContainer = styled.div`
     width: 200px;
@@ -24,7 +25,7 @@ class Navigation extends React.Component {
 
         this.state = {
             rooms: [],
-            activeRoom: 0
+            activeRoomId: 0
         }
 
         this.changeRoomHandler = this.changeRoomHandler.bind(this);
@@ -50,14 +51,16 @@ class Navigation extends React.Component {
     render() {
         return (
             <NavContainer>
-                <UserInfo>{this.props.name}</UserInfo>
+                <UserInfo>{this.props.name}
+                <UserSessionTime />
+                </UserInfo>
                 {this.state.rooms.map((room, i) => (
                     <Room
                         key={i}
                         id={room.id}
                         name={room.name}
                         onClick={this.changeRoomHandler}
-                        activeRoom={this.props.activeRoom}
+                        activeRoomId={this.props.activeRoomId}
                     />
                 ))}
             </NavContainer>
