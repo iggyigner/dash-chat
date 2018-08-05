@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 class MessageInput extends React.Component {
     constructor(props) {

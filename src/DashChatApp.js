@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import MessageList from './MessageList';
 import MessageInput from './MessageInput';
+import Navigation from './Navigation';
 
 class DashChatApp extends React.Component {
     constructor(props) {
@@ -12,25 +13,29 @@ class DashChatApp extends React.Component {
             username: this.props.username
         }
 
+        this.updateMessagesHandler = this.updateMessagesHandler.bind(this);
         this.sendMessageHandler = this.sendMessageHandler.bind(this);
     }
 
     componentDidMount() {
-        //See if any new messages have been added to the chat API server
-        // fetch('http://localhost:8080/api/rooms/0/messages')
-        //     .then(function (response) { return response.json(); })
-        //     .then(function (data) {
-        //         const messages = this.state.messages;
-        //         const newMessages = data.map(message => message);
-        //         messages.push(newMessages);
-        //         this.setState({ messages });
-        //     });
-
-        axios.get('http://localhost:8080/api/rooms/0/messages')
+         axios.get('http://localhost:8080/api/rooms/0/messages')
             .then(res => {
                 const messages = res.data.map(message => message);
                 this.setState({messages});
             });
+    }
+
+    updateMessagesHandler(roomId) {
+        axios.get('http://localhost:8080/api/rooms/' + roomId + '/messages')
+            .then(res => {
+                const messages = res.data.map(message => message);
+                this.updateRoomMessages(messages);
+            });
+        // console.log("roomID: " + roomId);
+    }
+
+    updateRoomMessages(messages) {
+        this.setState({messages});
     }
 
     sendMessageHandler(message) {
@@ -41,12 +46,14 @@ class DashChatApp extends React.Component {
 
         const messageObj = {
             name: this.props.username,
-            message: message
+            message: message,
+            fromMe: true
         };
         this.addMessage(messageObj);
     }
 
     addMessage(messageObj) {
+        console.log(messageObj);
         const messages = this.state.messages;
         messages.push(messageObj);
         this.setState({messages});
@@ -55,7 +62,7 @@ class DashChatApp extends React.Component {
     render() {
         return (
             <div>
-                <h2>{this.state.username}</h2>
+                <Navigation name={this.state.username} onChange={this.updateMessagesHandler} />
                 <MessageList messages={this.state.messages} />
                 <MessageInput onSend={this.sendMessageHandler} />
             </div>

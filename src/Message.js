@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import './Message.css';
 
 class Message extends React.Component {
     constructor() {
@@ -8,13 +8,15 @@ class Message extends React.Component {
 
     render() {
         return (
-            <div className={this.props.fromMe ? 'message from-me' : 'message'} >
+            <div className='message'>
+            <div className={this.props.fromMe ? 'message-group from-me' : 'message-group'} >
                 <div className='username'>
-                    {this.props.username}
+                    <h4>{this.props.username}</h4>
                 </div>
                 <div className='message-body'>
-                    {this.props.message}
+                   <p>{this.props.message}</p>
                 </div>
+            </div>
             </div>
         )
     }
