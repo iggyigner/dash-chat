@@ -1,3 +1,5 @@
+// Guts borrowed from https://codepen.io/jurekbarth/pen/pgYGBm
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 
