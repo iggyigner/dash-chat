@@ -1,3 +1,29 @@
 .room-info {
     grid-area: roominfo;
+    padding-left: 96px;
+    background-color: #F7F6FD;
+}
+
+.room-info h1 {
+    height: 28px;
+	color: #4A4A4A;
+	font-family: "Avenir Next";
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 33px;
+}
+
+.room-info p {
+    height: 28px;
+	color: #8D8D8E;
+	font-family: "Avenir Next";
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 16px;
+}
+
+.hr { 
+    border: 0; 
+    height: 3px; 
+    background: #EDEEF6;
 }

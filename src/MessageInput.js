@@ -30,9 +30,10 @@ class MessageInput extends React.Component {
 
     render() {
         return (
-            <div className='message-input'>
+            <div className='message-input-container'>
                 <form className="message-input" onSubmit={this.sendHandler}>
                     <input type="text"
+                        className='message-send'
                         onChange={this.textChangeHandler}
                         value={this.state.messageInput}
                         placeholder="Write a message..."

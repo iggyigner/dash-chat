@@ -42,7 +42,7 @@ class Navigation extends React.Component {
                     <UserSessionTimer />
                 </div>
 
-                <div className='room-info'>
+                <div className='room-info-nav'>
                     <h1 className='chatrooms-title'>Chatrooms</h1>
                     <div className='rooms-container'>
                         {this.state.rooms.map((room, i) => (
