@@ -47,13 +47,6 @@ class DashChatApp extends React.Component {
                     })
             });
 
-        // this.setState({ 
-        //     messages: messages, 
-        //     activeRoomId: res.roomId, 
-        //     activeRoom: res.room, 
-        //     activeRoomUsers: res.roomUsers 
-        // });
-
     }
 
     // Fetch messages on room change and update active room

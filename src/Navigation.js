@@ -13,6 +13,7 @@ class Navigation extends React.Component {
             activeRoomId: 0
         }
 
+        // Bind 'this' to event handler as React ES6 does not do so originally
         this.changeRoomHandler = this.changeRoomHandler.bind(this);
     }
 
@@ -27,11 +28,6 @@ class Navigation extends React.Component {
     changeRoomHandler(id, name) {
         this.props.onChange(id, name);
     }
-
-    // changeActiveRoom(roomId) {
-    //     console.log("entered changeActiveRoom");
-    //     this.setState({ activeRoom: roomId });
-    // }
 
     render() {
         return (

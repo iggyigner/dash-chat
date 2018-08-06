@@ -10,6 +10,7 @@ class App extends Component {
       username: ''
     }
 
+    //Bind 'this' to handlers as ES6 does not do it automatically
     this.usernameChangeHandler = this.usernameChangeHandler.bind(this)
     this.usernameSubmitHandler = this.usernameSubmitHandler.bind(this)
   }

@@ -15,7 +15,6 @@ class Room extends React.Component {
 
         console.log('event.target.value:' + event.target.innerText);
         this.props.onClick(event.target.id, event.target.innerText);
-        // this.setState({ messageInput: '' })
     }
 
     render() {
