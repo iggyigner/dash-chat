@@ -5,7 +5,7 @@
   background-color: #FB9AFE;
   background-image: url('./images/background.svg');
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: minmax(600px, 658px) 1fr;
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas:
     "login ."
