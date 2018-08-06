@@ -1,0 +1,65 @@
+.nav-container {
+    grid-area: nav;
+    background-color: rgba(235,235,235,0.5);
+    /* Safari only */
+    backdrop-filter: blur(12px);
+}
+
+.profile-info {
+    width: auto;
+    height: auto;
+    border: 1px solid blue;
+    margin-top: 42px;
+    margin-left: 30px;
+}
+
+.profile-pic {
+    width: 75px;
+    height: 75px;
+    background-image: url('./images/profile_pic_username-ns.png');
+    background-size: contain;
+}
+
+.username {
+    height: 28px;
+	width: 120px;
+	color: #4A4A4A;
+	font-family: "Avenir Next";
+	font-size: 16px;
+	font-weight: 500;
+    line-height: 22px;
+    margin-top: 7px;
+    margin-bottom: 0;
+}
+
+.timer {
+    height: 28px;
+	width: 120px;
+	color: #4A4A4A;
+	font-family: "Avenir Next";
+	font-size: 12px;
+	font-weight: 500;
+    line-height: 16px;
+    margin-top: 3px;
+}
+
+.timer span {
+    font-weight: 700;
+}
+
+.chatrooms-title {
+    height: 49px;
+	width: 271px;
+	color: #4A4A4A;
+	font-family: "Avenir Next";
+	font-size: 40px;
+	font-weight: bold;
+    line-height: 55px;
+    margin-left: 25px;
+}
+
+.rooms-container {
+    border: 1px solid green;
+    margin-top: 83px;
+    margin-left: 25px;
+}

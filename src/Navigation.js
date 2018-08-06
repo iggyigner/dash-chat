@@ -1,23 +1,8 @@
 import React from 'react'
 import axios from 'axios'
-import styled from 'styled-components'
 import Room from './Room';
 import UserSessionTimer from './UserSessionTimer';
-
-const NavContainer = styled.div`
-    width: 200px;
-    float: left;
-    height: 1000px;
-    background-color: red;
-
-`
-
-const UserInfo = styled.h2`
-    width: 100%;
-    height: 100px;
-    background-color: rgba(255,255,255,.4);
-`
-
+import './Navigation.css'
 
 class Navigation extends React.Component {
     constructor() {
@@ -33,13 +18,13 @@ class Navigation extends React.Component {
 
     componentDidMount() {
         axios.get('http://localhost:8080/api/rooms')
-           .then(res => {
-               const rooms = res.data.map(room => room);
-               this.setState({rooms});
-           });
-   }
+            .then(res => {
+                const rooms = res.data.map(room => room);
+                this.setState({ rooms });
+            });
+    }
 
-   changeRoomHandler(id, name){
+    changeRoomHandler(id, name) {
         this.props.onChange(id, name);
     }
 
@@ -50,20 +35,29 @@ class Navigation extends React.Component {
 
     render() {
         return (
-            <NavContainer>
-                <UserInfo>{this.props.name}
-                <UserSessionTimer />
-                </UserInfo>
-                {this.state.rooms.map((room, i) => (
-                    <Room
-                        key={i}
-                        id={room.id}
-                        name={room.name}
-                        onClick={this.changeRoomHandler}
-                        activeRoomId={this.props.activeRoomId}
-                    />
-                ))}
-            </NavContainer>
+            <div className='nav-container'>
+                <div className='profile-info'>
+                    <div className='profile-pic'></div>
+                    <h5 className='username'>{this.props.name}</h5>
+                    <UserSessionTimer />
+                </div>
+
+                <div className='room-info'>
+                    <h1 className='chatrooms-title'>Chatrooms</h1>
+                    <div className='rooms-container'>
+                        {this.state.rooms.map((room, i) => (
+                            <Room
+                                key={i}
+                                id={room.id}
+                                name={room.name}
+                                onClick={this.changeRoomHandler}
+                                activeRoomId={this.props.activeRoomId}
+                            />
+                        ))}
+                    </div>
+
+                </div>
+            </div>
         )
     }
 }

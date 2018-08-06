@@ -1,3 +1,66 @@
-a {
-    color: white;
+.room {
+    width: 100%;
+    height: auto;
+    padding-left: 25px;
+    margin-bottom: 36px;
 }
+
+.room-icon {
+    width: 17px;
+    height: 25px;
+    display: inline-block;
+}
+
+/* Set this up correctly in future */
+.room-0 {
+    background-image: url('./images/icon_tea.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.room-1 {
+    background-image: url('./images/icon_coffee.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.room-2 {
+    background-image: url('./images/icon_music.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.room-3 {
+    background-image: url('./images/icon_shoe.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.room-4 {
+    background-image: url('./images/icon_car.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.room a {
+    height: 30px;
+	width: 120px;
+	color: #83889E;
+	font-family: "Avenir Next";
+	font-size: 16px;
+	font-weight: 500;
+    line-height: 22px;
+    margin-left: 15px;
+    vertical-align: top;
+    text-decoration: none;
+    /* Add pointer on hover */
+    cursor: pointer;
+    transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.room a:hover {
+    color: #42A4F5;
+    transform: translateY(-3px);
+}
+
+

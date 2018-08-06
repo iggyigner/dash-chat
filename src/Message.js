@@ -8,15 +8,15 @@ class Message extends React.Component {
 
     render() {
         return (
-            <div className='message'>
-            <div className={this.props.fromMe ? 'message-group from-me' : 'message-group'} >
-                <div className='username'>
-                    <h4>{this.props.username}</h4>
+            <div className={this.props.fromMe ? 'message-group from-me' : 'message-group'}>
+                <div>
+                    <div className='username'>
+                        <h4>{this.props.username}</h4>
+                    </div>
+                    <div className='message-body'>
+                        <p>{this.props.message}</p>
+                    </div>
                 </div>
-                <div className='message-body'>
-                   <p>{this.props.message}</p>
-                </div>
-            </div>
             </div>
         )
     }

@@ -4,6 +4,7 @@ import MessageList from './MessageList';
 import MessageInput from './MessageInput';
 import Navigation from './Navigation';
 import MessageRoomHeader from './MessageRoomHeader';
+import './DashChatApp.css'
 
 class DashChatApp extends React.Component {
     constructor(props) {
@@ -102,7 +103,7 @@ class DashChatApp extends React.Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className='chatapp'>
                 <Navigation
                     name={this.state.username}
                     onChange={this.updateRoomHandler}

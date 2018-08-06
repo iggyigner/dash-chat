@@ -26,12 +26,7 @@ class UserSessionTimer extends React.Component {
     }
     render () {
       return (
-        <div className='timer'>
-          <h1>{this.state.count}</h1>
-          <div>
-            
-          </div>
-        </div>
+        <p className='timer'><span>{this.state.count}s</span> spent online</p>
       )
     }
   }

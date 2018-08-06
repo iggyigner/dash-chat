@@ -20,7 +20,8 @@ class Room extends React.Component {
 
     render() {
         return (
-            <div className='room'>
+            <div className='room' id={this.props.id}>
+                <div className={'room-icon ' + 'room-' + this.props.id}/>
                 <a href="#" onClick={this.handleClick} id={this.props.id} >{this.props.name}</a>
             </div>
         )

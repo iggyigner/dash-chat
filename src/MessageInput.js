@@ -1,4 +1,5 @@
 import React from 'react'
+import './MessageInput.css'
 
 class MessageInput extends React.Component {
     constructor(props) {
@@ -22,20 +23,22 @@ class MessageInput extends React.Component {
         // Prevent form submit from refreshing the page
         event.preventDefault()
 
-        
+
         this.props.onSend(this.state.messageInput)
         this.setState({ messageInput: '' })
     }
 
     render() {
         return (
-            <form className="message-input" onSubmit={this.sendHandler}>
-                <input type="text"
-                    onChange={this.textChangeHandler}
-                    value={this.state.messageInput}
-                    placeholder="Write a message..."
-                    required />
-            </form>
+            <div className='message-input'>
+                <form className="message-input" onSubmit={this.sendHandler}>
+                    <input type="text"
+                        onChange={this.textChangeHandler}
+                        value={this.state.messageInput}
+                        placeholder="Write a message..."
+                        required />
+                </form>
+            </div>
         );
     }
 }
