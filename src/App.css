@@ -1,4 +1,139 @@
-.App {
+.container {
+  position: fixed;
+  width: 100%;
+  min-height: 100%;
+  background-color: #FB9AFE;
+  background-image: url('./images/background.svg');
+  display: grid;
+  grid-template-columns: 45% 55%;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "login ."
+    "login loginimage"
+    "login ."
+}
+
+.img-wrapper {
+  grid-area: loginimage;
+}
+
+.login-img {
+  height: 282px;
+  width: 333px;
+  background-image: url('./images/drake_login.png');
+  background-repeat: no-repeat;
+  align-self: center;
+  margin: 0 auto;
+}
+
+.login-wrapper {
+  grid-area: login;
+  background-color: #F7F6FD;
+}
+
+.login-content {
+  margin-top: 23%;
+  margin-left: 12%;
+}
+
+.app-name {	
+  height: 57px;	
+  width: 354px;
+  color: #BCC0C6;		
+  font-family: "Avenir Next";	
+  font-size: 2.5em;	
+  font-weight: bold;	
+  line-height: 55px;
+  margin-top: 0px;
+}
+
+.welcome {
+	height: 72px;
+	width: 313px;
+	color: #BCC0C6;
+	font-family: "Avenir Next";
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 33px;
+}
+
+.app-name span {
+  color: #4A4A4A;
+}
+
+.username-container .username-entry {
+  height: 60px;
+  width: 455px;
+  border: 1px solid #EDEEF6;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 1px 3px 0 #EDEEF6, 0 2px 4px 0 rgba(213,214,229,0.5);
+  text-indent: 55px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  opacity: 1; /* Firefox */
+	color: #BCC0C6;
+	font-family: "Avenir Next";
+	font-size: 16px;
+  line-height: 62px;
+  text-align: left;
+  margin-left: 55px;
+}
+
+input.btn-login {
+  height: 45px;
+	width: 140px;
+	border: 1px solid #EDEEF6;
+  background-color: #42A4F5;
+  text-align: center;
+  color: #FFFFFF;
+	font-family: "Avenir Next";
+	font-size: 16px;
+	font-weight: 500;
+  line-height: 22px;
+  margin-top: 111px;
+  /* Add pointer on hover */
+  cursor: pointer;
+  transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+input.btn-login:hover {
+    background: #F6ABCF;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px);
+}
+
+.username-container button {
+  height: 45px;
+  width: 140px;
+  border: 1px solid #83889E;
+  background-color: #F7F6FD;
+  font-family: "Avenir Next";
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 22px;
+  text-align: center;
+  margin-left: 22px;
+}
+
+.login-content p {
+  height: 52px;
+	color: #83889E;
+	font-family: "Avenir Next";
+	font-size: 12px;
+	font-weight: 500;
+  line-height: 23px;
+  margin-top: 78px;
+}
+
+.login-content p a {
+  color: #4A4A4A;
+  font-weight: 700;
+}
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -25,4 +160,4 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+} */

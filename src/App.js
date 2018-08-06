@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import styled from 'styled-components'
 import DashChatApp from './DashChatApp';
 
 
@@ -36,16 +34,33 @@ class App extends Component {
     }
 
     return (
-      <form onSubmit={this.usernameSubmitHandler} className="username-container">
-        <div>
-          <input
-            type="text"
-            onChange={this.usernameChangeHandler}
-            placeholder="Enter a username..."
-            required />
+      <div className='container'>
+        <div className='login-wrapper'>
+          <div className='login-content'>
+            <h1 className='app-name'>We are <span>Dash Chat</span></h1>
+            <h5 className='welcome'>Welcome. Let's send each<br/> other Drake memes.</h5>
+            <form onSubmit={this.usernameSubmitHandler} className='username-container'>
+              <div>
+                <input
+                  type="text"
+                  onChange={this.usernameChangeHandler}
+                  placeholder="Enter a username..."
+                  className='username-entry'
+                  required />
+              </div>
+              <input type="submit" value="Submit" className='btn-login'/>
+              <button>Or Don't</button>
+            </form>
+            <p id='disclaimer'>By logging in, you agree to nothing.<br/>
+              <a href='https://giphy.com/gifs/pizza-drake-hotline-bling-e2AKpOvx2MREY'>Smile </a> 
+               & <a href='http://www.iggyigner.com/'> Check out my portfolio.</a>
+            </p>
+          </div>
         </div>
-        <input type="submit" value="Submit" />
-      </form>
+        <div className='img-wrapper'>
+         <div className='login-img' />
+        </div>
+      </div>
     )
   }
 }
