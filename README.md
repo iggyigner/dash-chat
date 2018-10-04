@@ -1,15 +1,7 @@
-# Jonathan Iggy Igner's Submission: DashChat with React and a Sketch-based design system + design version control
-# DoorDash Frontend Interview Project
+# Chat app with React and a Sketch-based design system + design version control
 * TLDR: *Build a chat app with real APIs*
-* Time: *3hr - 6hrs* (was having fun, so spent some more time, too)
-* Allowed tools & frameworks: *anything*
-* Show us what you got!
 
-## Howdy! 👋  
-
-I had an absolute blast hopping into this. Looking forward to chatting about it with you all if you're up for it!
-
-## Getting started
+### Getting started! 👋  
 There's a few things you need to get this to work.
 First and foremost, the github link to the private repo for Dash Chat is [here](https://github.com/iggyigner/dash-chat).
 
@@ -29,20 +21,6 @@ I did my best to follow the specs found in the `./spec` directory. Checkout the 
 
 ### 5. Design System
 I did my best to run through a quick design rev, and build out an automated design system using Sketch and Craft. I created a Github repo (using Kactus) to version control the design [here](https://github.com/iggyigner/dash-chat-design/tree/master/dash-chat-design-kactus). Prototypes and assets can be accessed and shared, as well [here](https://invis.io/8YND4AW5WB3). I've included my Sketch Library (in case you want to import it into Sketch using Craft) in the zipped version of the project I emailed back to recruiting. I didn't quite have enough time to submodule an LFS-powered repo of exported assets for easy use inside the Dash Chat project, but am happy to talk more about this process if you're interested.
-
-## Submission Instructions (added all those below and followed all instructions)
-1. Write up instructions on how to run your project and ensure there's ample documentation on your intent
-2. Upload your repo as a **private** repository to GitHub or GitLab
-3. Ensure that we're added as collaborators to the repo, and have access to read/download your project:
-  * [`ryngonzalez`](https://github.com/ryngonzalez) (GitHub/GitLab)
-  * [`badsauce`](https://github.com/badsauce) (GitHub/Gitlab)
-  * [`marknach`](https://github.com/marknach) (GitHub/GitLab)
-  * [`dpenny`](https://github.com/dpenny) (GitHub)
-  * [`qknudsen`](https://github.com/qknudsen) (GitHub), [`quintin.knudsen`](https://gitlab.com/quintin.knudsen) (Gitlab)
-  * [`jessyes`](https://github.com/jessyes) (GitHub)
-  * [`ifsred`](https://github.com/ifsred) (GitHub/GitLab)
-4. Send an email back to recruiting to ensure that we have a link/access to the repo.
-5. We'll review and get back to you soon!
 
 ## Extra notes
 I had some fun plans for using images and svg animations (wanted to animate the background), but didn't quite have time to get to them. There's definitely some optimizations that could be made, too. Would love to tell you about them.
