@@ -24,5 +24,3 @@ I did my best to run through a quick design rev, and build out an automated desi
 
 ## Extra notes
 I had some fun plans for using images and svg animations (wanted to animate the background), but didn't quite have time to get to them. There's definitely some optimizations that could be made, too. Would love to tell you about them.
-
-Thanks so much for the opportunity to hop into this! Hopefully we get to high five in the future.
